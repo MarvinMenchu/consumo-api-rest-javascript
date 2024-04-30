@@ -1,13 +1,13 @@
 const cabeceras = {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
-    'X-API-KEY': 'live_LIkBwXa9EkZFOxMrRimFlcmVTJfw7HIjVWVfJMJQEkPqLo8xVrm75wAgTXmahIXN'
+    'X-API-KEY': ''
 }
 
 const api = axios.create({
     baseURL: 'https://api.thecatapi.com/v1',
 })
-api.defaults.headers.common['x-api-key'] = 'live_LIkBwXa9EkZFOxMrRimFlcmVTJfw7HIjVWVfJMJQEkPqLo8xVrm75wAgTXmahIXN'
+api.defaults.headers.common['x-api-key'] = ''
 
 
 const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=3'
