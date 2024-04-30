@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatitos aleatoreos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .btn {
+                @apply border rounded px-2 text-gray-200 my-0 mx-2;
+            }
+
+            .btn-blue {
+                @apply dark:bg-blue-700 hover:bg-blue-700 border-none;
+            }
+
+            .btn-green {
+                @apply dark:bg-green-700 hover:bg-green-800 border-none;
+            }
+
+            .btn-red {
+                @apply dark:bg-red-700 hover:bg-red-800 border-none;
+            }
+
+            .btn-gray {
+                @apply dark:bg-gray-500 hover:bg-gray-600 border-none;
+            }
+
+            .imageCover {
+                @apply bg-['url(./images/cats.jpg)'];
+            
+            }
+        }
+    </style>
+</head>
+<body class="dark:bg-slate-800">
+    <div class="">
+        <h1 class="text-center text-2xl dark:text-white">Michis App</h1>
+        <section id="randomMichis" class="mb-6">
+            <h2 class="text-center text-2x dark:text-slate-400">Gatitos Aleatoros</h2>
+            <span class="dark:text-white" id="error"></span>
+            <div class="flex mx-2 my-2 justify-around">
+                <article class="w-1/3">
+                    <img class="rounded-lg w-40 mx-auto mb-2" id="img1" alt="Foto Gatito Aleatoreo">
+                    <button id="btn1" class="btn btn-blue">Guardar michi en favoritos</button>
+                </article>
+                <article class="w-1/3">
+                    <img class="rounded-lg w-40 mx-auto mb-2" id="img2" alt="Foto Gatito Aleatoreo">
+                    <button id="btn2" class="btn btn-blue">Guardar michi en favoritos</button>
+                </article>
+                <article class="w-1/3">
+                    <img class="rounded-lg w-40 mx-auto mb-2" id="img3" alt="Foto Gatito Aleatoreo">
+                    <button id="btn3" class="btn btn-blue">Guardar michi en favoritos</button>
+                </article>
+            </div>
+            <button class="btn btn-green" onclick="loadRandomMichi()">Recargar</button>
+        </section>
+
+        <div class="border flex flex-row">
+            <section id="uploadingMichi" class="mx-auto">
+                <h2 class="dark:text-white text-center">Sube la foto de tu michi</h2>
+                <form id="uploadingForm" class="justify-center">
+                    <input type="file" id="file" name="file" class="text-center">
+                    <div id="previewContainer" class="border rounded-lg mx-auto"></div>
+                    <button type="button" onclick="uploadMichiPhoto()" class="btn btn-gray" >Subir Foto de Michi</button>
+                </form>
+            </section>
+        </div>
+
+        <div class="mt-6">
+            <h2 class="text-center text-2xl dark:text-white">Michis favoritos</h2>
+            <section class="flex mx-2 my-2 justify-around grid grid-cols-3" id="favoritesMichis">
+                <!-- <article class="flex flex-col">
+                    <img class="rounded-lg w-40 mx-auto" id="img1" alt="Foto Gatito Aleatoreo">
+                    <button class="btn btn-green">Sacar al michi de favoritos</button>
+                </article> -->
+            </section>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
